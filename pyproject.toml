@@ -1,7 +1,7 @@
 [project]
-name = "dpp-template"
+name = "image_classification_pneumonia"
 version = "0.1.0"
-description = "Add your description here"
+description = "We use a kaggle dataset consisting of labelled images to train artificial neural networks. "
 readme = "README.md"
 requires-python = ">=3.13"
 dependencies = [
@@ -12,6 +12,10 @@ dependencies = [
     "seaborn>=0.13.2",
     "duckdb>=1.4.1",
     "scikit-learn>=1.7.2",
+    "torch>=2.10.0",
+    "torchvision>=0.25.0",
+    "pip>=26.0.1",
+    "opencv-python>=4.13.0.92",
 ]
 
 [build-system]

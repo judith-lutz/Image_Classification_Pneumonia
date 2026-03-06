@@ -36,10 +36,9 @@ uv sync
 Run the notebooks in the following order:
 1. notebooks/01_exploration.ipynb
 2. notebooks/02_preprocessing.ipynb
-3. notebooks/03_modeling.ipynb
-<!--
-4. notebooks/04_results.ipynb
--->
+3. notebooks/03_baseline_model.ipynb
+4. notebooks/04_model2.ipynb
+
 
 
 ### Origin of the data

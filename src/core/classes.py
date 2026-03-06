@@ -9,7 +9,7 @@ from torchvision.transforms.v2.functional import to_dtype
 DATASET_NAME = 'chest-xray-pneumonia-balanced-dataset'
 
 class CustomImageDataset(Dataset):
-    def __init__(self, set_name, transform=None, target_transform=None, resolution=100):
+    def __init__(self, set_name, transform=None, target_transform=None, resolution=100, dimension_output=3):
         set_name = 'train'
         files = []
         labels = []
@@ -25,6 +25,7 @@ class CustomImageDataset(Dataset):
         self.transform = transform
         self.target_transform = target_transform
         self.resolution = resolution
+        self.dimension_output = dimension_output
 
     def __len__(self):
         return len(self.img_labels)
@@ -38,12 +39,14 @@ class CustomImageDataset(Dataset):
         img_path = "/".join(["../data/raw/", DATASET_NAME, self.set_name, label, self.img_dir[idx]])
         #print(img_path)
         #img_path = os.path.join(self.img_dir, self.img_labels.iloc[idx, 0])
-        image = to_dtype(decode_image(img_path))[0,:,:]*1/255
+        image = to_dtype(decode_image(img_path))[0,:,:]*1/255 
         image = image[None, None, :,:]
         #print(image.shape)
         if self.transform:
             image = nn.functional.interpolate(input=image, size=(self.resolution,self.resolution))
         if self.target_transform:
             label_number = self.target_transform(label_number)
-        return image[0,0,:,:], label_number
+        if self.dimension_output == 2:
+            return image[0,0,:,:], label_number
+        return image[0,:,:,:], label_number
    

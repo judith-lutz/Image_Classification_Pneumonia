@@ -48,3 +48,5 @@ Kermany, Daniel S. et al.
 Cell, Volume 172, Issue 5, 1122 - 1131.e9
 
 2. Kermany, Daniel; Zhang, Kang; Goldbaum, Michael (2018), “Labeled Optical Coherence Tomography (OCT) and Chest X-Ray Images for Classification”, Mendeley Data, V2, doi: 10.17632/rscbjbr9sj.2
+
+Kaggle link: https://www.kaggle.com/datasets/yusufmurtaza01/chest-xray-pneumonia-balanced-dataset/data
